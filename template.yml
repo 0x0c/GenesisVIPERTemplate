@@ -1,0 +1,37 @@
+options:
+  - name: developer_name
+    description: Your name.
+    question: Please input your name.
+  - name: project_name
+    description: Project name.
+    question: Please input your project's name.
+  - name: module_name
+    description: Module name
+    question: Please input the module name.
+  - name: output_path
+    description: Output path
+    question: Please input the path for output files.
+  - name: test_output_path
+    description: Test output path
+    question: Please input the path for output tests codes. Input empty to skip code generation.
+files:
+  - template: Templates/Code/View/ViewController.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/View/{{ module_name }}ViewController.swift"
+  - template: Templates/Code/Interactor/Interactor.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/Interactor/{{ module_name }}Interactor.swift"
+  - template: Templates/Code/Presenter/Presenter.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/Presenter/{{ module_name }}Presenter.swift"
+  - template: Templates/Code/Router/Router.swift.stencil
+    path: "{{ output_path }}/{{ module_name }}/Router/{{ module_name }}Router.swift"
+  - template: Templates/Test/View/ViewTest.swift.stencil
+    path: "{{ test_output_path }}/{{ module_name }}/View/{{ module_name }}ViewTest.swift"
+    include: test_output_path != ''
+  - template: Templates/Test/Interactor/InteractorTest.swift.stencil
+    path: "{{ test_output_path }}/{{ module_name }}/Interactor/{{ module_name }}InteractorTest.swift"
+    include: test_output_path != ''
+  - template: Templates/Test/Presenter/PresenterTest.swift.stencil
+    path: "{{ test_output_path }}/{{ module_name }}/Presenter/{{ module_name }}PresenterTest.swift"
+    include: test_output_path != ''
+  - template: Templates/Test/Router/RouterTest.swift.stencil
+    path: "{{ test_output_path }}/{{ module_name }}/Router/{{ module_name }}RouterTest.swift"
+    include: test_output_path != ''

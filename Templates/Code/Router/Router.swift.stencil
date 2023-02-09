@@ -1,0 +1,39 @@
+//
+//  {{ module_name }}Router
+//  {{ project_name }}
+//
+//  Created by {{ developer_name }} on {{ date }}.
+//
+
+import UIKit
+
+protocol {{ module_name }}RouterInput: AnyObject {
+    // MARK: View transitions
+}
+
+final class {{ module_name }}Router {
+    private unowned let viewController: {{ module_name }}ViewController
+
+    init(viewController: {{ module_name }}ViewController) {
+        self.viewController = viewController
+    }
+
+    static func assembleModule() -> {{ module_name }}ViewController {
+        let view = {{ module_name }}ViewController()
+        // TODO: Create a Storyboard with the same name as "{{ module_name }}".
+        // TODO: And Change "{{ module_name }}" of "R.storyboard.{{ module_name }}" to lowercase.
+        // guard let view = R.storyboard.{{ module_name }}.instantiateInitialViewController() else {
+        //     fatalError("Fail to load {{ module_name }}ViewController from Storyboard.")
+        // }
+        let interactor = {{ module_name }}Interactor()
+        let router = {{ module_name }}Router(viewController: view)
+        let presenter = {{ module_name }}Presenter(view: view, interactor: interactor, router: router)
+
+        view.presenter = presenter
+        interactor.presenter = presenter
+
+        return view
+    }
+}
+
+extension {{ module_name }}Router: {{ module_name }}RouterInput {}
