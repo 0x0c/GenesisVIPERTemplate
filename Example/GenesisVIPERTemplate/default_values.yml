@@ -1,0 +1,4 @@
+developer_name: Akira Matsuda
+project_name: GenesisVIPERTemplate
+output_path: ./GenesisVIPERTemplate/Module
+test_output_path: ./GenesisVIPERTemplateTests/Module

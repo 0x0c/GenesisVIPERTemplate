@@ -1,14 +1,14 @@
 //
-//  {{ module_name }}InteractorTests
-//  {{ project_name }}
+//  ExampleModuleInteractorTests
+//  GenesisVIPERTemplate
 //
-//  Created by {{ developer_name }} on {{ date }}.
+//  Created by Akira Matsuda on 2023/02/11.
 //
 
-@testable import {{ project_name }}
+@testable import GenesisVIPERTemplate
 import XCTest
 
-class {{ module_name }}InteractorTests: XCTestCase {
+class ExampleModuleInteractorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -19,7 +19,7 @@ class {{ module_name }}InteractorTests: XCTestCase {
         super.tearDown()
     }
 
-    class MockPresenter: {{ module_name }}InteractorOutput {
+    class MockPresenter: ExampleModuleInteractorOutput {
 
     }
 }
