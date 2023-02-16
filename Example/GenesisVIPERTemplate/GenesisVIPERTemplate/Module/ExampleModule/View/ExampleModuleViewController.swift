@@ -7,9 +7,13 @@
 
 import UIKit
 
+// MARK: - ExampleModuleViewInput
+
 protocol ExampleModuleViewInput: AnyObject {
     // MARK: Callback from presenter
 }
+
+// MARK: - ExampleModuleViewController
 
 final class ExampleModuleViewController: UIViewController {
     // MARK: Stored instance properties
@@ -29,5 +33,7 @@ final class ExampleModuleViewController: UIViewController {
 
     // MARK: Other private methods
 }
+
+// MARK: ExampleModuleViewInput
 
 extension ExampleModuleViewController: ExampleModuleViewInput {}
