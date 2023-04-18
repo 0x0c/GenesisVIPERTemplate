@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - ExampleModulePresenterInput
+
 protocol ExampleModulePresenterInput: AnyObject {
     // MARK: View Life-Cycle methods
 
@@ -15,12 +17,10 @@ protocol ExampleModulePresenterInput: AnyObject {
     // MARK: Other methods called from View
 }
 
-final class ExampleModulePresenter {
-    // MARK: VIPER properties
+// MARK: - ExampleModulePresenter
 
-    weak var view: ExampleModuleViewInput!
-    var interactor: ExampleModuleInteractorInput!
-    var router: ExampleModuleRouterInput!
+final class ExampleModulePresenter {
+    // MARK: Lifecycle
 
     // MARK: Stored instance properties
 
@@ -31,12 +31,24 @@ final class ExampleModulePresenter {
         self.interactor = interactor
         self.router = router
     }
+
+    // MARK: Internal
+
+    // MARK: VIPER properties
+
+    weak var view: ExampleModuleViewInput!
+    var interactor: ExampleModuleInteractorInput!
+    var router: ExampleModuleRouterInput!
 }
+
+// MARK: ExampleModulePresenterInput
 
 extension ExampleModulePresenter: ExampleModulePresenterInput {
     func viewDidLoad() {
         // TODO: Implement if needed
     }
 }
+
+// MARK: ExampleModuleInteractorOutput
 
 extension ExampleModulePresenter: ExampleModuleInteractorOutput {}
