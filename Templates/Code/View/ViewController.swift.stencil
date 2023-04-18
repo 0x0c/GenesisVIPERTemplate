@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 protocol {{ module_name }}ViewInput: AnyObject {
     // MARK: Callback from presenter
 }
