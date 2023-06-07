@@ -8,11 +8,11 @@
 import Foundation
 
 protocol {{ module_name }}InteractorInput: AnyObject {
-    // MARK: Methods for modifying repository
+    // MARK: Methods called from presenter
 }
 
 protocol {{ module_name }}InteractorOutput: AnyObject {
-    // MARK: Callback methods from repository
+    // MARK: Callback methods for presenter
 }
 
 final class {{ module_name }}Interactor {

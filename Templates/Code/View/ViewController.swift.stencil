@@ -13,13 +13,8 @@ protocol {{ module_name }}ViewInput: AnyObject {
 }
 
 final class {{ module_name }}ViewController: UIViewController {
-    // MARK: Stored instance properties
-
+    // MARK: VIPER properties
     var presenter: {{ module_name }}PresenterInput!
-
-    // MARK: Computed instance properties
-
-    // MARK: IBOutlets
 
     // MARK: View Life-Cycle methods
 
