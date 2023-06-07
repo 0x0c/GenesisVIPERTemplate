@@ -7,10 +7,12 @@
 
 import UIKit
 
+@MainActor
 protocol {{ module_name }}RouterInput: AnyObject {
     // MARK: View transitions
 }
 
+@MainActor
 final class {{ module_name }}Router {
     private unowned let viewController: {{ module_name }}ViewController
 
