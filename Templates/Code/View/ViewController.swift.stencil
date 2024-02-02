@@ -10,6 +10,7 @@ import UIKit
 @MainActor
 protocol {{ module_name }}ViewInput: AnyObject {
     // MARK: Callback from presenter
+    func updateState(_ state: {{ module_name }}PresenterState)
 }
 
 final class {{ module_name }}ViewController: UIViewController {
@@ -26,4 +27,8 @@ final class {{ module_name }}ViewController: UIViewController {
     // MARK: Other private methods
 }
 
-extension {{ module_name }}ViewController: {{ module_name }}ViewInput {}
+extension {{ module_name }}ViewController: {{ module_name }}ViewInput {
+    func updateState(_ state: {{ module_name }}PresenterState) {
+        // TODO: Update view for state
+    }
+}

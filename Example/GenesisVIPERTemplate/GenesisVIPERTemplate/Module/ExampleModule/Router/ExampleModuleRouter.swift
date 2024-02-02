@@ -2,27 +2,23 @@
 //  ExampleModuleRouter
 //  GenesisVIPERTemplate
 //
-//  Created by Akira Matsuda on 2023/02/11.
+//  Created by Akira Matsuda on 2024/02/02.
 //
 
 import UIKit
 
-// MARK: - ExampleModuleRouterInput
-
+@MainActor
 protocol ExampleModuleRouterInput: AnyObject {
     // MARK: View transitions
 }
 
-// MARK: - ExampleModuleRouter
-
+@MainActor
 final class ExampleModuleRouter {
-    // MARK: Lifecycle
+    private unowned let viewController: ExampleModuleViewController
 
     init(viewController: ExampleModuleViewController) {
         self.viewController = viewController
     }
-
-    // MARK: Internal
 
     static func assembleModule() -> ExampleModuleViewController {
         let view = ExampleModuleViewController()
@@ -40,12 +36,6 @@ final class ExampleModuleRouter {
 
         return view
     }
-
-    // MARK: Private
-
-    private unowned let viewController: ExampleModuleViewController
 }
-
-// MARK: ExampleModuleRouterInput
 
 extension ExampleModuleRouter: ExampleModuleRouterInput {}

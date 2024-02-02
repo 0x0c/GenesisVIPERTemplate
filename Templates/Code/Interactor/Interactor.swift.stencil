@@ -7,7 +7,13 @@
 
 import Foundation
 
-protocol {{ module_name }}InteractorInput: AnyObject {
+{% if has_repository %}
+struct {{ module_name }}InteractorEntity {
+    // TODO: Replace to specific entity
+}
+{% endif %}
+
+protocol {{ module_name }}InteractorInput {
     // MARK: Methods called from presenter
 }
 
@@ -18,12 +24,9 @@ protocol {{ module_name }}InteractorOutput: AnyObject {
 final class {{ module_name }}Interactor {
     // MARK: VIPER property
     weak var presenter: {{ module_name }}InteractorOutput!
-
-    // MARK: Stored instance properties
-
-    // MARK: Computed instance properties
-
-    // MARK: Initializer
+    {% if has_repository %}
+    var storage: {{ module_name }}InteractorEntity?
+    {% endif %}
     
     init() {}
 

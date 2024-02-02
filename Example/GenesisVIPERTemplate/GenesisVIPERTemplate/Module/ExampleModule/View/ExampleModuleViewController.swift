@@ -2,27 +2,20 @@
 //  ExampleModuleViewController
 //  GenesisVIPERTemplate
 //
-//  Created by Akira Matsuda on 2023/02/11.
+//  Created by Akira Matsuda on 2024/02/02.
 //
 
 import UIKit
 
-// MARK: - ExampleModuleViewInput
-
+@MainActor
 protocol ExampleModuleViewInput: AnyObject {
     // MARK: Callback from presenter
+    func updateState(_ state: ExampleModulePresenterState)
 }
 
-// MARK: - ExampleModuleViewController
-
 final class ExampleModuleViewController: UIViewController {
-    // MARK: Stored instance properties
-
+    // MARK: VIPER properties
     var presenter: ExampleModulePresenterInput!
-
-    // MARK: Computed instance properties
-
-    // MARK: IBOutlets
 
     // MARK: View Life-Cycle methods
 
@@ -34,6 +27,8 @@ final class ExampleModuleViewController: UIViewController {
     // MARK: Other private methods
 }
 
-// MARK: ExampleModuleViewInput
-
-extension ExampleModuleViewController: ExampleModuleViewInput {}
+extension ExampleModuleViewController: ExampleModuleViewInput {
+    func updateState(_ state: ExampleModulePresenterState) {
+        // TODO: Update view for state
+    }
+}

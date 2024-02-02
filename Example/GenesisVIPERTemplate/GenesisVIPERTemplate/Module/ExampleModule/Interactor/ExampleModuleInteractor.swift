@@ -2,45 +2,31 @@
 //  ExampleModuleInteractor
 //  GenesisVIPERTemplate
 //
-//  Created by Akira Matsuda on 2023/02/11.
+//  Created by Akira Matsuda on 2024/02/02.
 //
 
 import Foundation
 
-// MARK: - ExampleModuleInteractorInput
-
-protocol ExampleModuleInteractorInput: AnyObject {
-    // MARK: Methods for modifying repository
+struct ExampleModuleInteractorEntity {
+    // TODO: Replace to specific entity
 }
 
-// MARK: - ExampleModuleInteractorOutput
+protocol ExampleModuleInteractorInput {
+    // MARK: Methods called from presenter
+}
 
 protocol ExampleModuleInteractorOutput: AnyObject {
-    // MARK: Callback methods from repository
+    // MARK: Callback methods for presenter
 }
 
-// MARK: - ExampleModuleInteractor
-
 final class ExampleModuleInteractor {
-    // MARK: Lifecycle
-
-    // MARK: Stored instance properties
-
-    // MARK: Computed instance properties
-
-    // MARK: Initializer
-
+    // MARK: VIPER property
+    weak var presenter: ExampleModuleInteractorOutput!
+    var storage: ExampleModuleInteractorEntity?
+    
     init() {}
 
     // MARK: Other private methods
-
-    // MARK: Internal
-
-    // MARK: VIPER property
-
-    weak var presenter: ExampleModuleInteractorOutput!
 }
-
-// MARK: ExampleModuleInteractorInput
 
 extension ExampleModuleInteractor: ExampleModuleInteractorInput {}

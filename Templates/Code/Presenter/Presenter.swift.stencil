@@ -5,7 +5,13 @@
 //  Created by {{ developer_name }} on {{ date }}.
 //
 
+import Combine
 import Foundation
+
+enum {{ module_name }}PresenterState {
+    // TODO: Add any states for view
+    case initial
+}
 
 @MainActor
 protocol {{ module_name }}PresenterInput: AnyObject {
@@ -22,6 +28,9 @@ final class {{ module_name }}Presenter {
     var interactor: {{ module_name }}InteractorInput!
     var router: {{ module_name }}RouterInput!
 
+    @Published private var state: {{ module_name }}PresenterState = .initial
+    private var cancellable = Set<AnyCancellable>()
+
     init(view: {{ module_name }}ViewInput, interactor: {{ module_name }}InteractorInput, router: {{ module_name }}RouterInput) {
         self.view = view
         self.interactor = interactor
@@ -32,6 +41,14 @@ final class {{ module_name }}Presenter {
 extension {{ module_name }}Presenter: {{ module_name }}PresenterInput {
     func viewDidLoad() {
         // TODO: Implement if needed
+        $state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newState in
+                guard let self else {
+                    return
+                }
+                view.updateState(newState)
+            }.store(in: &cancellable)
     }
 }
 
