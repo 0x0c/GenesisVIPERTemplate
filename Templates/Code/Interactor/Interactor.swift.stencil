@@ -25,7 +25,7 @@ final class {{ module_name }}Interactor {
     // MARK: VIPER property
     weak var presenter: {{ module_name }}InteractorOutput!
     {% if has_repository %}
-    private var storage: {{ module_name }}InteractorEntity?
+    private(set) var storage: {{ module_name }}InteractorEntity?
     {% endif %}
     
     init() {}
