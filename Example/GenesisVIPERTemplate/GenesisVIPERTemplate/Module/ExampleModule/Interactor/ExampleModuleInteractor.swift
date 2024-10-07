@@ -22,7 +22,7 @@ protocol ExampleModuleInteractorOutput: AnyObject {
 final class ExampleModuleInteractor {
     // MARK: VIPER property
     weak var presenter: ExampleModuleInteractorOutput!
-    private var storage: ExampleModuleInteractorEntity?
+    private(set) var storage: ExampleModuleInteractorEntity?
     
     init() {}
 
