@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func presentModule(_ sender: Any) {
+    @IBAction func presentModule(_: Any) {
         navigationController?.pushViewController(ExampleModuleRouter.assembleModule(), animated: true)
     }
 }

@@ -19,7 +19,5 @@ class ExampleModuleInteractorTests: XCTestCase {
         super.tearDown()
     }
 
-    class MockPresenter: ExampleModuleInteractorOutput {
-
-    }
+    class MockPresenter: ExampleModuleInteractorOutput {}
 }

@@ -25,6 +25,7 @@ protocol ExampleModulePresenterInput: AnyObject {
 @MainActor
 final class ExampleModulePresenter {
     // MARK: VIPER properties
+
     weak var view: ExampleModuleViewInput!
     var interactor: ExampleModuleInteractorInput!
     var router: ExampleModuleRouterInput!

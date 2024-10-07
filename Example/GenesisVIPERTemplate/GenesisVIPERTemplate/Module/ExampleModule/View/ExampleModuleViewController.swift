@@ -10,11 +10,13 @@ import UIKit
 @MainActor
 protocol ExampleModuleViewInput: AnyObject {
     // MARK: Callback from presenter
+
     func updateState(_ state: ExampleModulePresenterState)
 }
 
 final class ExampleModuleViewController: UIViewController {
     // MARK: VIPER properties
+
     var presenter: ExampleModulePresenterInput!
 
     // MARK: View Life-Cycle methods
@@ -28,7 +30,7 @@ final class ExampleModuleViewController: UIViewController {
 }
 
 extension ExampleModuleViewController: ExampleModuleViewInput {
-    func updateState(_ state: ExampleModulePresenterState) {
+    func updateState(_: ExampleModulePresenterState) {
         // TODO: Update view for state
     }
 }

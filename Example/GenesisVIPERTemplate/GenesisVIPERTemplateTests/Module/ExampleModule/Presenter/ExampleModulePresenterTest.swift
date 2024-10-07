@@ -19,17 +19,11 @@ class ExampleModulePresenterTest: XCTestCase {
         super.tearDown()
     }
 
-    class MockInteractor: ExampleModuleInteractorInput {
+    class MockInteractor: ExampleModuleInteractorInput {}
 
-    }
-
-    class MockRouter: ExampleModuleRouterInput {
-
-    }
+    class MockRouter: ExampleModuleRouterInput {}
 
     class MockViewController: ExampleModuleViewInput {
-        func setupInitialState() {
-
-        }
+        func setupInitialState() {}
     }
 }
