@@ -8,10 +8,6 @@ options:
   - name: module_name
     description: Module name
     question: Please input the module name.
-  - name: has_repository
-    description: Whether the module has a repository or not.
-    question: The module communiates any API servers or datasources to get contents? [y/n]
-    type: boolean
   - name: output_path
     description: Output path
     question: Please input the path for output files.
