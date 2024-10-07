@@ -2,7 +2,7 @@
 //  ExampleModulePresenter
 //  GenesisVIPERTemplate
 //
-//  Created by Akira Matsuda on 2024/02/02.
+//  Created by Akira Matsuda on 2024/10/07.
 //
 
 import Combine
@@ -22,6 +22,7 @@ protocol ExampleModulePresenterInput: AnyObject {
     // MARK: Other methods called from View
 }
 
+@MainActor
 final class ExampleModulePresenter {
     // MARK: VIPER properties
     weak var view: ExampleModuleViewInput!

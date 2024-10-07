@@ -2,7 +2,7 @@
 //  ExampleModuleInteractor
 //  GenesisVIPERTemplate
 //
-//  Created by Akira Matsuda on 2024/02/02.
+//  Created by Akira Matsuda on 2024/10/07.
 //
 
 import Foundation
@@ -22,7 +22,7 @@ protocol ExampleModuleInteractorOutput: AnyObject {
 final class ExampleModuleInteractor {
     // MARK: VIPER property
     weak var presenter: ExampleModuleInteractorOutput!
-    var storage: ExampleModuleInteractorEntity?
+    private var storage: ExampleModuleInteractorEntity?
     
     init() {}
 
