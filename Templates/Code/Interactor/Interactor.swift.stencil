@@ -7,12 +7,6 @@
 
 import Foundation
 
-{% if has_repository %}
-struct {{ module_name }}InteractorEntity {
-    // TODO: Replace to specific entity
-}
-{% endif %}
-
 protocol {{ module_name }}InteractorInput {
     // MARK: Methods called from presenter
 }
@@ -22,12 +16,6 @@ protocol {{ module_name }}InteractorOutput: AnyObject {
 }
 
 final class {{ module_name }}Interactor {
-    // MARK: VIPER property
-    weak var presenter: {{ module_name }}InteractorOutput!
-    {% if has_repository %}
-    private(set) var storage: {{ module_name }}InteractorEntity?
-    {% endif %}
-    
     init() {}
 
     // MARK: Other private methods

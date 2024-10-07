@@ -32,7 +32,6 @@ final class ExampleModuleRouter {
         let presenter = ExampleModulePresenter(view: view, interactor: interactor, router: router)
 
         view.presenter = presenter
-        interactor.presenter = presenter
 
         return view
     }

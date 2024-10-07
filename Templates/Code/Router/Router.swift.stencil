@@ -32,7 +32,6 @@ final class {{ module_name }}Router {
         let presenter = {{ module_name }}Presenter(view: view, interactor: interactor, router: router)
 
         view.presenter = presenter
-        interactor.presenter = presenter
 
         return view
     }

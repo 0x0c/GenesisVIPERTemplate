@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct ExampleModuleInteractorEntity {
-    // TODO: Replace to specific entity
-}
-
 protocol ExampleModuleInteractorInput {
     // MARK: Methods called from presenter
 }
@@ -20,11 +16,6 @@ protocol ExampleModuleInteractorOutput: AnyObject {
 }
 
 final class ExampleModuleInteractor {
-    // MARK: VIPER property
-
-    weak var presenter: ExampleModuleInteractorOutput!
-    private(set) var storage: ExampleModuleInteractorEntity?
-
     init() {}
 
     // MARK: Other private methods
