@@ -22,6 +22,7 @@ protocol {{ module_name }}PresenterInput: AnyObject {
     // MARK: Other methods called from View
 }
 
+@MainActor
 final class {{ module_name }}Presenter {
     // MARK: VIPER properties
     weak var view: {{ module_name }}ViewInput!
