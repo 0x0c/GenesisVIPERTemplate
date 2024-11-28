@@ -15,7 +15,7 @@ protocol {{ module_name }}InteractorOutput: AnyObject {
     // MARK: Callback methods for presenter
 }
 
-final class {{ module_name }}Interactor {
+actor {{ module_name }}Interactor {
     init() {}
 
     // MARK: Other private methods
