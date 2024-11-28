@@ -43,7 +43,6 @@ extension {{ module_name }}Presenter: {{ module_name }}PresenterInput {
     func viewDidLoad() {
         // TODO: Implement if needed
         $state
-            .receive(on: DispatchQueue.main)
             .sink { [weak self] newState in
                 guard let self else {
                     return
